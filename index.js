@@ -7,10 +7,9 @@
  * @returns The matching list of drivers.
  */
 function findMatching(drivers, searchTerm) {
-  let foundDrivers = drivers.filter(driver => {
+  return drivers.filter(driver => {
     return driver.toLocaleLowerCase() === searchTerm.toLocaleLowerCase();
   });
-  return foundDrivers;
 }
 
 /**
@@ -21,7 +20,9 @@ function findMatching(drivers, searchTerm) {
  * @returns All drivers whose names begin with the provided letters.
  */
 function fuzzyMatch(drivers, searchTerm) {
-  
+  return drivers.filter(driver => {
+    return driver.startsWith(searchTerm);
+  });
 }
 
 /**
@@ -32,6 +33,8 @@ function fuzzyMatch(drivers, searchTerm) {
  * @returns Each driver object whose name property matches the provided string.
  */
 function matchName(drivers, searchTerm) {
-  
+  return drivers.filter(driver => {
+    return driver.name === searchTerm;
+  });
 }
 
