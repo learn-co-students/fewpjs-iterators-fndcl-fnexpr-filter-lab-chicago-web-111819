@@ -5,8 +5,8 @@ function findMatching(drivers, string) {
 }
 
 function fuzzyMatch(drivers, string) {
-    const strArr = string.split('');
-    return drivers.filter(driver => strArr.some( char => char == driver.charAt(0)));
+    const charArr = string.split('');
+    return drivers.filter(driver => charArr.some( char => char == driver.charAt(0)));
 }
 
 function matchName(drivers, string) {
