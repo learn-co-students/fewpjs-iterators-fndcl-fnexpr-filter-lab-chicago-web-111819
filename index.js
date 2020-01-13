@@ -5,11 +5,10 @@
  * @param {Array<String>} drivers Available drivers' names.
  * @param {String} searchTerm What to filter {drivers} on.
  * @returns The matching list of drivers.
+ * 
  */
 function findMatching(drivers, searchTerm) {
-  return drivers.filter(driver => {
-    return driver.toLocaleLowerCase() === searchTerm.toLocaleLowerCase();
-  });
+  return drivers.filter(driver => driver.toLowerCase() === searchTerm.toLowerCase());
 }
 
 /**
@@ -18,11 +17,10 @@ function findMatching(drivers, searchTerm) {
  * @param {Array<String>} drivers Available drivers' names.
  * @param {String} searchTerm What to filter {drivers} on.
  * @returns All drivers whose names begin with the provided letters.
+ * 
  */
 function fuzzyMatch(drivers, searchTerm) {
-  return drivers.filter(driver => {
-    return driver.startsWith(searchTerm);
-  });
+  return drivers.filter(driver => driver.startsWith(searchTerm));
 }
 
 /**
@@ -31,10 +29,10 @@ function fuzzyMatch(drivers, searchTerm) {
  * @param {Array<String>} drivers Available drivers' names.
  * @param {String} searchTerm What to filter {drivers} on.
  * @returns Each driver object whose name property matches the provided string.
+ * 
  */
 function matchName(drivers, searchTerm) {
-  return drivers.filter(driver => {
-    return driver.name === searchTerm;
-  });
+  return drivers.filter(driver => driver.name === searchTerm);
 }
+
 
